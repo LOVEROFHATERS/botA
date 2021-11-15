@@ -1,0 +1,162 @@
+# bot.py
+import os
+import random
+from discord.ext import commands
+import discord
+from dotenv import load_dotenv
+import socket
+
+load_dotenv()
+TOKEN = os.getenv('DISCORD_TOKEN')
+bot = commands.Bot(command_prefix='$')
+client = discord.Client()
+
+
+
+
+
+def socketo(message2):
+     prior = socket.gethostbyaddr(message2)
+     return prior
+     print(prior)
+
+
+@client.event
+async def on_ready():
+    print(f'{client.user.name} has connected to Discord!')
+
+@client.event
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(
+        f'Hi {member.name}, welcome to my Discord server!'
+    )
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    brooklyn_98_quotes = (
+        'I\'m the human form of the 💯 emoji.',
+        'Bingpot!',
+        (
+            'Cool. Cool cool cool cool cool cool cool, '
+            'no doubt no doubt no doubt no doubt.'
+        ),
+
+
+    )
+    famous_hero = (
+        'hello this is my personal server'
+        'e sure to maitain the ethics anyone who'
+        ' needa help on any subject may just use '
+        '!ER'
+        ' for special good day quote'
+    )
+
+    tyrantu = (
+
+        'https://www.google.com'
+
+
+    )
+
+    radium = (
+
+        'Radium is a chemical element with the symbol Ra and atomic number 88. It is the sixth element in group 2 of the periodic table, also known as the alkaline earth metals. Pure radium is silvery-white, but it readily reacts with nitrogen (rather than oxygen) on exposure to air, forming a black surface layer of radium nitride (Ra3N2). All isotopes of radium are highly radioactive, with the most stable isotope being radium-226, which has a half-life of 1600 years and decays into radon gas (specifically the isotope radon-222). When radium decays, ionizing radiation is a by-product, which can excite fluorescent chemicals and cause radioluminescence.'
+
+        'Radium, in the form of radium chloride, was discovered by Marie and Pierre Curie in 1898 from ore mined at Jáchymov. They extracted the radium compound from uraninite and published the discovery at the French Academy of Sciences five days later. Radium was isolated in its metallic state by Marie Curie and André-Louis Debierne through the electrolysis of radium chloride in 1911.[1]'
+
+        'In nature, radium is found in uranium and (to a lesser extent) thorium ores in trace amounts as small as a seventh of a gram per ton of uraninite. Radium is not necessary for living organisms, and adverse health effects are likely when it is incorporated into biochemical processes because of its radioactivity and chemical reactivity. Currently, other than its use in nuclear medicine, radium has no commercial applications; formerly, it was used as a radioactive source for radioluminescent devices and also in radioactive quackery for its supposed curative powers. Today, these former applications are no longer in vogue because radiums toxicity has become known, and less dangerous isotopes are used instead in radioluminescent devices.'
+
+
+
+
+    )
+
+    techtenium = (
+                         'Technetium is a'
+                ' chemical element with the symbol Tc and atomic number 43. It is the lightest element whose isotopes are all radioactive, none of which is stable other than the fully ionized state of 97Tc.[4] Nearly all available technetium is produced as a synthetic element.Naturally occurring technetium is a spontaneous fission product in uranium ore and thorium ore, the most common source, or the product of neutron capture in molybdenum ores.The silvery gray, crystalline transition metal lies between manganese and rhenium in group 7 of the periodic table, and its chemical properties are intermediate between those of both adjacent elements.The most common naturally occurring isotope is 99Tc, in traces only.'
+
+                ' Many of technetium-s properties had been predicted by Dmitri Mendeleev before it was discovered. Mendeleev noted a gap in his periodic table and gave the undiscovered element the provisional name ekamanganese (Em). In 1937, technetium (specifically the technetium-97 isotope) became the first predominantly artificial element to be produced, hence its name (from the Greek τεχνητός, meaning "Craft, Art or Artificial", + -ium).'
+
+                ' One short-lived gamma ray-emitting nuclear isomer, technetium-99m, is used in nuclear medicine for a wide variety of tests, such as bone cancer diagnoses.The ground state of the nuclide technetium-99 is used as a gamma-ray-free source of beta particles.Long-lived technetium isotopes produced commercially are byproducts of the fission of uranium-235 in nuclear reactors and are extracted from nuclear fuel rods.Because even the longest-lived isotope of technetium has a relatively short half-life (4.21 million years), the'
+                         '    1952'
+                'detection'
+                'of'
+                'technetium in red'
+                'giants'
+                'helped'
+                ' to'
+                'prove'
+                'that'
+                ' stars'
+                'can'
+                'produce'
+                'heavier'
+                ' elements.'
+
+    )
+    lanthanides = (
+                'The lanthanide ( / ˈlænθənaɪd /) or lanthanoid( / ˈlænθənɔɪd /) series'
+                'of'
+                ' chemical'
+                'elements[1]'
+                'comprises'
+                ' the'
+                '15'
+                'metallic'
+                ' chemical'
+                'elements'
+                'with atomic numbers 57–71, from lanthanum through lutetium.[2][3][4] These elements, along with the chemically similar elements scandium and yttrium, are often collectively known as the rare-earth elements or rare-earth metals.'
+
+                'Its origin is from the English words Lanthanum and -ide.'
+
+                'The informal chemical symbol Ln is used in general discussions of lanthanide chemistry to refer to any lanthanide.All but one of the lanthanides are f-block elements, corresponding to the filling of the 4f electron shell.There is some dispute on whether lanthanum or lutetium is a d-block element, but lutetium is usually considered so by those who study the matter;[5][6] it is included due to its chemical similarities with the other 14.[7] All lanthanide elements form trivalent cations, Ln3+, whose chemistry is largely determined by the ionic radius, which decreases steadily from lanthanum to lutetium.'
+
+                ' They are called lanthanides because the elements in the series are chemically similar to lanthanum.Since "lanthanide" means "like lanthanum", it has been argued that lanthanum cannot logically be a lanthanide, but the International Union of Pure and Applied Chemistry (IUPAC) acknowledges its inclusion based on common usage.[8]'
+
+                ' In presentations of the periodic table, the f-block elements are customarily shown as two additional rows below the main body of the table, [2] This convention is entirely a matter of aesthetics and formatting practicality; a rarely used wide-formatted periodic table inserts the 4f and 5f series in their proper places, as parts of the tables sixth and seventh rows (periods).'
+
+                'The 1985 IUPAC "Red Book" (p.45) recommends that "lanthanoid" is used rather than "lanthanide".The ending "-ide" normally indicates a negative ion.However, owing to wide current use, "lanthanide" is still allowed.'
+
+    )
+    francium = (
+                'Francium is a chemical element with the symbol Fr and atomic number 87. Prior to its discovery, it was referred to as eka-caesium. It is extremely radioactive; its most stable isotope, francium-223 (originally called actinium K after the natural decay chain it appears in), has a half-life of only 22 minutes. It is the second-most electropositive element, behind only caesium, and is the second rarest naturally occurring element (after astatine). The isotopes of francium decay quickly into astatine, radium, and radon. The electronic structure of a francium atom is [Rn] 7s1, and so the element is classed as an alkali metal.'
+                'Bulk francium has never been seen. Because of the general appearance of the other elements in its periodic table column, it is assumed that francium would appear as a highly reactive metal, if enough could be collected together to be viewed as a bulk solid or liquid. Obtaining such a sample is highly improbable, since the extreme heat of decay resulting from its short half-life would immediately vaporize any viewable quantity of the element.'
+                'Francium was discovered by Marguerite Perey in France (from which the element takes its name) in 1939.[3] It was the last element first discovered in nature, rather than by synthesis.[note 1] Outside the laboratory, francium is extremely rare, with trace amounts found in uranium and thorium ores, where the isotope francium-223 continually forms and decays. As little as 20–30 g (one ounce) exists at any given time throughout the Earth-s crust; aside from francium-221, its other isotopes are entirely synthetic. The largest amount produced in the laboratory '
+
+
+
+    )
+
+
+    if message.content == '!ER':
+        response = random.choice(brooklyn_98_quotes)
+        await message.channel.send(response)
+    elif message.content == '!help':
+        response = random.choice(famous_hero)
+        await  message.channel.send(response)
+    elif message.content == '!rules':
+        response = random.choice(tyrantu)
+        await message.channel.send(response)
+    elif message.content == 'radium':
+        response = radium
+        await message.channel.send(response)
+    elif message.content == 'lanthanides':
+        response = lanthanides
+        await message.channel.send(response)
+    elif message.content == 'francium':
+        response = francium
+        await message.channel.send(response)
+    elif message.content == 'techtenium':
+        response = techtenium
+        await message.channel.send(response)
+    elif message.content == 'chemistry':
+        response = 'usable words are (lanthanides,francium,techtenium,radium)'
+        await message.channel.send(response)
+
+
+client.run('token')
+
